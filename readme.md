@@ -3,6 +3,6 @@
 ## Jornada de desenvolvimento
 - [ x ] modelo da Página
 - [ x ] Sistema de modo  escuro
-- [ ] Animações e afinações finais
-- [ ] Projecto terminado
+- [] Animações e afinações finais
+- [] Projecto terminado
 
