@@ -4,6 +4,8 @@
   --txt-color: #1c1e20;
   --box-backgroud : rgba(164, 221, 255, 0.26);
   --witcher : #2ac0c4;
+  --anim-name : fade-in;
+  --bg-name : bg-moving;
 }
 
 
@@ -14,6 +16,8 @@
   --box-backgroud : rgb(164 221 255 / 41%);
   --witcher : #2ac0c4;
   --bg-color: #001744;
+  --anim-name: darkmode;
+  --bg-name : bg-darkmode;
 }
 
 
@@ -22,14 +26,13 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     background-image: var(--bg-svg);
     background-repeat: no-repeat;
     display: flex;
     align-content: center;
-    background-size: unset;
     background-color: var(--bg-color);
-  
+    animation: var(--bg-name) 2s ease-in-out forwards;
+    
 }
 
 
@@ -78,6 +81,13 @@ body{
     border-radius: 15px;
     background: var(--box-backgroud);
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    animation: var(--anim-name) 2s linear, bouncing 1s ease-in-out alternate infinite; 
+    
+}
+
+
+.darkMode:hover{
+  animation-play-state: paused;
 }
 
 .darkMode p{
@@ -154,3 +164,68 @@ body{
   .slider.round:before {
     border-radius: 50%;
   }
+
+
+
+  /* Animações*/
+
+
+@keyframes bouncing {
+  to{
+    transform: translateY(6px);
+  }
+  
+}
+
+@keyframes bg-moving {
+  from{
+    background-position-x: 0%;
+    background-size: 185vh;
+  }
+  to{
+    background-position-x: 50%;
+    background-size: 235vh;
+  }
+}
+
+@keyframes bg-darkmode {
+  from{
+    background-position-x: 0%;
+    background-size: 185vh;
+  }
+  to{
+    background-position-x: 50%;
+    background-size: 235vh;
+  }
+}
+
+
+@keyframes fade-in {
+  from {
+    opacity:  0;
+  }
+
+  to{
+    opacity: 1;
+  }
+  
+}
+
+@keyframes darkmode {
+  from{
+    opacity:  0;
+    background-color: var(--box-backgroud);
+  }
+  to{
+    opacity: 1;
+    background-color: var(--box-backgroud);
+  }
+}
+
+
+
+#fade-in {
+
+  animation: var(--anim-name) 2s linear;
+  
+}
