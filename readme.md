@@ -4,5 +4,5 @@
 - [x] modelo da Página
 - [x] Sistema de modo  escuro
 - [x] Animações e afinações finais
-- [ ] Projecto terminado
+- [x] Projecto terminado
 
